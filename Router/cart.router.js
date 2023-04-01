@@ -1,8 +1,10 @@
 const express = require('express');
 
 const CartModel = require('../Model/cart.model');
+const jwt = require('jsonwebtoken')
 
 const cartRouter = express.Router();
+
 
 //asdfasdf
 cartRouter.get('/', async (req, res) => {
@@ -21,7 +23,7 @@ cartRouter.post('/addtocart', async (req, res) => {
     const payload = req.body;
 
     try {
-        let data = CartModel(payload);
+        let data = new CartModel(payload);
         await data.save();
         res.status(200).send({ msg: "Added to Cart" })
     } catch (error) {
@@ -41,5 +43,5 @@ cartRouter.delete('/deleteCart/:ID', async (req, res) => {
     }
 })
 
-
+module.exports = cartRouter
 

@@ -1,5 +1,6 @@
 const express = require('express');
 const WishlistModel = require('../Model/wishlist.model');
+const jwt = require('jsonwebtoken')
 
 const wishListRouter = express.Router();
 
@@ -40,3 +41,5 @@ wishListRouter.delete('/deletewishlist/:ID', async (req, res) => {
     }
 })
 
+
+module.exports = wishListRouter

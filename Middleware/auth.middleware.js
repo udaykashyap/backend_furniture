@@ -11,7 +11,7 @@ const auth = (req, res, next) => {
 
             req.body.userID = decode.userID;
             // console.log(decode.userID)
-            console.log(req.body)
+            // console.log(req.body)
 
             if (decode) {
 
