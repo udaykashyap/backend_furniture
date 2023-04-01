@@ -6,7 +6,7 @@ const bcrypt = require('bcrypt');
 
 
 
-//api routes for registering users  
+//api routes for registering users s 
 
 userRouter.post('/register', async (req, res) => {
     const { Name, email, password } = req.body;
